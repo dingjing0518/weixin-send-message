@@ -10,6 +10,7 @@
     <modules>
         <module>send-message-8080</module>
         <module>send-message-8081</module>
+        <module>send-message-8083</module>
     </modules>
     <packaging>pom</packaging>
 

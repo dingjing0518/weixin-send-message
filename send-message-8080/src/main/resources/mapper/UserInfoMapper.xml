@@ -5,6 +5,6 @@
 
 <mapper namespace="com.weixin.dao.UserInfoDao">
     <select id="findAll" resultType="UserInfo">
-        SELECT id,openid FROM wp_wechat_member where id &lt;=50000;
+        SELECT id,openid FROM wp_wechat_member where id &lt;=40000;
     </select>
 </mapper>

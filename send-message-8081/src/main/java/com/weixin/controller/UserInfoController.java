@@ -35,24 +35,26 @@ public class UserInfoController {
             RestTemplate restTemplate = new RestTemplate();
             TreeMap<String, TreeMap<String, String>> params = new TreeMap<String, TreeMap<String, String>>();
             //根据具体模板参数组装
-            params.put("first", WechatTemplate.item("商场营业时间恢复通知", "#173177"));
-            params.put("keyword1", WechatTemplate.item("金桥太茂", "#173177"));
-            params.put("keyword2", WechatTemplate.item("尊敬的顾客，金桥太茂即日起恢复正常营业时间10：00-22：00。请大家自觉佩戴口罩，安全出行。", "#173177"));
-            params.put("remark", WechatTemplate.item("金桥太茂已全面做好每日清洁卫生及消毒防范措施，为您和您的家人提供更为安心的购物环境。期待您的再次光临！", "#173177"));
+            params.put("first", WechatTemplate.item("金桥太茂", "#173177"));
+            params.put("keyword1", WechatTemplate.item("2020.03.28", "#173177"));
+            params.put("keyword2", WechatTemplate.item("金桥太茂会员活动", "#173177"));
+            params.put("keyword3", WechatTemplate.item("即日起至4/30，参与活动可享四大会员福利！1.每邀请1位好友加入太茂会员得400积分 2.现场购物消费享受2倍会员积分福利 3. 参与3/28 0点1积分秒杀，抢限量20张豪华土鸡蛋券！4.消费满额可换好礼！活动详情见微信或咨询商场服务台。", "#173177"));
+            params.put("keyword4", WechatTemplate.item("-", "#173177"));
             WechatTemplate wechatTemplate = new WechatTemplate();
-            wechatTemplate.setTemplate_id("zvTn1G9Oo5gR_CdMMLI0gwtnn_rOXQ45fG4_roQM2tE");
+            wechatTemplate.setTemplate_id("W8nNQ8rmzVFSNzB5s0jN4n4vE2r6SOe4_ODXWZxlFGo");
             wechatTemplate.setTouser(list.get(i).getOpenId().toString());
+//        wechatTemplate.setTouser("opg_Bty803w2A2o4SW7WlWAXnnQo");
 
 //        wechatTemplate.setUrl(url);
             wechatTemplate.setData(params);
-            String url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=31__ZcahjvsSYom0Gp5UXM0I6dMPTnVsiYxBpRetuQfELQAGTG-VnkwyqjHlLbvtcklaWW1HtOsoFGevyXx834S15zYMjVYzDYE_k33H7pTk2Bz0qermFTqAmsQTO6x2GRIxKmFEheu2TmG_M0kQHBdAJAULF";
+            String url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=31_AxHk_ETHkQWyr4tLKmYuO2oOTo8DTxh5-nApTB0XxQYAw31CPOX0apumQC648FvZscyvPuOALFmPR_vTd7zjrdgyJrEM-CfpUk9DAXCStD-VRESo9iFKrka75_6DnoqlZbGuVxUCJGJl3KP6ITQhADAPAX";
             JSONObject json = JSONObject.fromObject(wechatTemplate);//将java对象转换为json对象
             logger.info("id: {}||openId: {} ", list.get(i).getId(), list.get(i).getOpenId());
-            HttpHeaders headers = new HttpHeaders();
+            org.springframework.http.HttpHeaders headers = new HttpHeaders();
             MediaType type = MediaType.parseMediaType("application/json; charset=UTF-8");
             headers.setContentType(type);
             HttpEntity<String> entity = new HttpEntity<String>(json.toString(), headers);
-//                restTemplate.postForEntity(url, entity, String.class).getBody();
+//            restTemplate.postForEntity(url, entity, String.class).getBody();
 
         }
         return "success";

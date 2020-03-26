@@ -1,0 +1,11 @@
+com\weixin\utils\WechatTemplate.class
+com\weixin\service\impl\UerInfoServiceImpl.class
+com\weixin\controller\UserInfoController.class
+com\weixin\utils\WeiXinUserData.class
+com\weixin\SendMessage8081_App.class
+com\weixin\entity\UserInfo.class
+com\weixin\service\UserInfoService.class
+com\weixin\utils\HttpUtil$1.class
+com\weixin\utils\HttpUtil.class
+com\weixin\utils\WeiXinUserList.class
+com\weixin\dao\UserInfoDao.class
